@@ -1,0 +1,36 @@
+---
+training:
+  args:
+    prefix: tvae-run
+    device: cuda
+    epochs: 5
+    test_batch_size: 16
+    train_batch_size: 16
+    checkpoint_interval: 1000
+    train_log_interval: 100
+
+model:
+  args:
+    num_layers: 6
+    emb_size: 600
+    latent_size: 100
+    dim_m: 512
+    n_heads: 8
+    dim_i: 2048
+
+dataset:
+  args:
+    root: ./dataset/
+    prefix: default-30k-600
+    pretrain_emb: True
+    vocab_size: 30000
+    embedding_size: 600
+
+optimizer:
+  # Optimizer class from `torch.optim`
+  name: Adam
+  args:
+    lr: 1.0e-4
+    amsgrad: True
+    betas: [0.9, 0.98]
+    eps: 1.0e-9

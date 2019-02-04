@@ -1,0 +1,9 @@
+numpy
+gensim
+sentencepiece
+torch>=1.0.0
+tqdm
+ignite
+tensorboardX
+typing
+PyYAML

@@ -1,0 +1,33 @@
+---
+training:
+  args:
+    prefix: develop-run
+    device: cuda
+    epochs: 3
+
+model:
+  args:
+    num_layers: 1
+    emb_size: 100
+    pool_context: True
+    latent_size: 10
+    dim_m: 8
+    n_heads: 2
+    dim_i: 8
+
+dataset:
+  args:
+    root: ./dataset/
+    prefix: develop-5k-100
+    pretrain_emb: True
+    vocab_size: 5000
+    embedding_size: 100
+
+optimizer:
+  # Optimizer class from `torch.optim`
+  name: Adam
+  args:
+    lr: 1.0e-4
+    amsgrad: True
+    betas: [0.9, 0.98]
+    eps: 1.0e-9
